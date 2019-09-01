@@ -38,11 +38,15 @@ public class EmpController {
 
 	}
 
+	
+	/*Update Employee data*/
 	@PutMapping("/update/{employeeId}")
 	public void updateEmployee(@PathVariable("employeeId") long employeeId, @RequestBody Employee employee) {
 
 		serviceImpl.updateEmployee(employee);
 	}
+
+	
 
 	@DeleteMapping("/remove/{employeeId}")
 	public void deleteEmployee(@PathVariable("employeeId") long employeeId) {
