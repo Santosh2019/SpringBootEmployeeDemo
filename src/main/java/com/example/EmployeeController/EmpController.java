@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.example.ServieImplementation.EmployeeServiceImpl;
 import com.example.bean.Employee;
 
@@ -21,9 +22,7 @@ public class EmpController {
 
 	@GetMapping("/singleEmployee/{employeeId}")
 	public Employee getEmployee(@PathVariable("employeeId") long employeeId) {
-
 		return serviceImpl.getSingleEmployee(employeeId);
-
 	}
 
 	@GetMapping("/employeeList")
@@ -40,12 +39,12 @@ public class EmpController {
 	}
 
 	@PutMapping("/update/{employeeId}")
-	public void updateEmployee(@RequestBody @PathVariable("employeeId") long employeeId, Employee employee) {
+	public void updateEmployee(@PathVariable("employeeId") long employeeId, @RequestBody Employee employee) {
 
 		serviceImpl.updateEmployee(employee);
 	}
 
-	@DeleteMapping("/remove{employeeId}")
+	@DeleteMapping("/remove/{employeeId}")
 	public void deleteEmployee(@PathVariable("employeeId") long employeeId) {
 		serviceImpl.deleteEmployee(employeeId);
 	}
