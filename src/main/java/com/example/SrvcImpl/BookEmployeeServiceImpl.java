@@ -1,4 +1,4 @@
-package com.example.ServieImplementation;
+package com.example.SrvcImpl;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +11,7 @@ import com.example.Services.EmployeeServices;
 import com.example.bean.Employee;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeServices {
+public class BookEmployeeServiceImpl implements EmployeeServices {
 
 	@Autowired
 	EmployeeRepository employeeRepo;

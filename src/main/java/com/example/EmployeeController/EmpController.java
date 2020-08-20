@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.ServieImplementation.EmployeeServiceImpl;
+import com.example.SrvcImpl.BookEmployeeServiceImpl;
 import com.example.bean.Employee;
 
 @RestController
 public class EmpController {
 
 	@Autowired
-	EmployeeServiceImpl serviceImpl;
+	BookEmployeeServiceImpl serviceImpl;
 
 	@GetMapping("/singleEmployee/{employeeId}")
 	public Employee getEmployee(@PathVariable("employeeId") long employeeId) {
