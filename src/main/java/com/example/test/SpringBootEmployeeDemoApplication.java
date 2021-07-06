@@ -1,5 +1,4 @@
-package com.example.Test;
-
+package com.example.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,15 +17,12 @@ public class SpringBootEmployeeDemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootEmployeeDemoApplication.class, args);
 	}
-	
+
 	@Bean
 	public Docket swaggerConfiguration() {
-		
-				 return new Docket(DocumentationType.SWAGGER_2)  
-				          .select()                                  
-				          .apis(RequestHandlerSelectors.any())              
-				          .paths(PathSelectors.any())                          
-				          .build();  
+
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.any())
+				.paths(PathSelectors.any()).build();
 	}
 
 }

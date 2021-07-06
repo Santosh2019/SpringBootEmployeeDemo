@@ -1,28 +1,31 @@
-package com.example.Test.SrvcImpl;
+package com.example.test.serivceImpl;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
-import com.example.Test.Dao.EmployeeRepository;
-import com.example.Test.Services.EmployeeServices;
-import com.example.Test.bean.Employee;
+import com.example.test.bean.Employee;
+import com.example.test.dao.EmployeeRepository;
+import com.example.test.services.EmployeeServices;
+
 
 @Service
-public class BookEmployeeServiceImpl implements EmployeeServices {
+public class EmployeeServiceImpl implements EmployeeServices {
 
 	@Autowired
 	EmployeeRepository employeeRepo;
 
 	@Override
-	public Employee getSingleEmployee(long employeeId) {
+	public Optional<Employee> getSingleEmployee(@PathVariable("employeeId")long employeeId) {
 		// TODO Auto-generated method stub
-		Optional<Employee> employee = employeeRepo.findById(employeeId);
+	//	Optional<Employee> employee = employeeRepo.findById(employeeId);
 
-		return employee.get();
+		return employeeRepo.findById(employeeId);
 	}
+	
 
 	@Override
 	public void addEmployee(Employee employee) {

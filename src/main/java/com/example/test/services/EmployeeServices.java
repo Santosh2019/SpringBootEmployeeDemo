@@ -1,8 +1,9 @@
-package com.example.Test.Services;
+package com.example.test.services;
 
 import java.util.List;
+import java.util.Optional;
 
-import com.example.Test.bean.Employee;
+import com.example.test.bean.Employee;
 
 public interface EmployeeServices {
 	
@@ -13,7 +14,7 @@ public interface EmployeeServices {
 	
 	public void deleteEmployee(long employeeId);
 	
-	public Employee getSingleEmployee(long employeeId);
+	public Optional<Employee> getSingleEmployee(long employeeId);
 	
 	public List<Employee> getAllEmployee(Employee employee);
 	
